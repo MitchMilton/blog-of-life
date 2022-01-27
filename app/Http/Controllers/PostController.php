@@ -107,7 +107,39 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, array(
+            'title' => 'required|max:255|unique:posts,'.$id,                       
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024|sometimes',            
+        ));  
+
+        //GET POST FROM DB AND UPDATE
+        $post = Post::findOrFail($request->id);
+        $post->title = $request->title;
+        $post->slug = $post->title;
+        $post->content = $request->content;
+        $post->slug = str_slug($post->title);
+        //Handle File Upload
+        if($request->hasFile('image')){
+            $oldFiletitle = $post->image;   
+                    
+            $fileNamewithExt = $request->file('image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($fileNamewithExt,PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //Filename to store
+            $post->image = 'p_'.$post->id.'_img'.time().'.'.$extension;
+            Storage::delete($oldFiletitle);
+            //Upload Image
+            $path = $request->file('image')->storeAs('public/post',$post->image);
+            $post->image = 'storage/post/'.$post->image;
+
+        }
+
+        $post->save();
+
+        return redirect('/dashboard')->with('success', $post->title.' updated');
     }
 
     /**
