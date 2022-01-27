@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PagesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('index');
+
+Route::get('/', [PagesController::class, 'index'])->name('index');
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
+    Route::resource('posts', PostController::class);
 });
+
+require __DIR__.'/auth.php';
