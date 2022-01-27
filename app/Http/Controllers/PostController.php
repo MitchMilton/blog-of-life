@@ -27,7 +27,38 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $this->validate($request, array(
+            'title' => 'required|max:255|unique:posts',                       
+            'content' => 'required',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024|sometimes',            
+            ));
+
+                
+        //store in the database
+        $post = new Post;
+        $post->title = $request->title;        
+        $post->content = $request->content;
+        $post->slug = str_slug($category->name.' '.$post->title);
+        // $post->slug = $post->title;
+        
+        if($request->hasFile('image')){           
+                
+            $fileNamewithExt = $request->file('image')->getClientOriginalName();
+            //Get just file name
+            $filename = pathinfo($fileNamewithExt,PATHINFO_FILENAME);
+            //Get just extension
+            $extension = $request->file('image')->getClientOriginalExtension();
+            //Filename to store
+            $post->image = 'p_'.$post->id.'_img'.time().'.'.$extension;
+            //Upload Image
+            $path = $request->file('image')->storeAs('public/post',$post->image);
+            $post->image = 'storage/post/'.$post->image;
+            
+        }
+        
+        $post->save();
+
+        return redirect('/dashboard')->with('success', $post->title.'  has been created!');
     }
 
     /**
