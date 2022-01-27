@@ -15,7 +15,7 @@ class PagesController extends Controller
         return view('welcome', compact('posts'));
     }
 
-    public function blog($slug)
+    public function viewPost($slug)
     {
         $post = Post::where('slug', $slug)->first();
         return view('pages.posts_view', compact('post'));
