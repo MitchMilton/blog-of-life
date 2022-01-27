@@ -27,7 +27,7 @@ class PostController extends Controller
      */
     public function create()
     {        
-        return view('pages.posts_create');
+        return view('pages.posts_create_edit');
     }
 
     /**
@@ -94,7 +94,7 @@ class PostController extends Controller
         if(empty($post)){
             return redirect('/dashboard')->with('error', "Post does'nt exist!");
         }else{            
-            return view('pages.posts_create',compact('post'));
+            return view('pages.posts_create_edit',compact('post'));
         }
     }
 
