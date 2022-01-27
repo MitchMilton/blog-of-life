@@ -26,3 +26,6 @@ DB_DATABASE=C:\your\absolute-path\blog-of-life\database\database.sqlite
 ```
 
 After that you're all set! Happy Testing. 🤓 
+Default Login
+Email: hello@blogoflife.com
+Pass:  amazeblogs22
