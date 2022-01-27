@@ -7,7 +7,7 @@ This is a simple php blog built with the following
 
 Development environment requirements :
 - [Php 7.2+](https://www.virtualbox.org/)
-- Apache/nginx server
+- Either Apache/nginx server , Laradock or Docker equivalent
 
 Setting up the environment on your local machine :
 ```bash
