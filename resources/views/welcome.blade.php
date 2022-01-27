@@ -72,10 +72,11 @@
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
                         <div class="flex items-center">
-
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Dashboard
-                            </a>
+                            @auth
+                                <a href="{{ url('/dashboard') }}"class="ml-1 underline">
+                                    Go to Dashboard
+                                </a>
+                            @endauth
                         </div>
                     </div>
 
