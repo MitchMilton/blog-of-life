@@ -20,14 +20,19 @@ git clone git@github.com:MitchMilton/blog-of-life.git
 cd blog-of-life
 cp .env.example .env
 composer install
-php artisan migrate:fresh --seed
 php artisan storage:link
+touch database/database.sqlite
 ```
 
 After running these commands go to the .env file and set the value of "DB_DATABASE" to the absolute path leading to the database.sqlite
 
 ```bash
 DB_DATABASE=C:\your\absolute-path\blog-of-life\database\database.sqlite
+```
+
+Once you have set the absolute path to the sqlite database run this command to seed the demo data.
+```bash
+php artisan migrate:fresh --seed
 ```
 
 After that you're all set! Happy Testing. 🤓 
