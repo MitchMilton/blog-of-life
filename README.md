@@ -1,13 +1,16 @@
+
+## About Blog of Life
 This is a simple php blog built with the following
 - [Laravel 8.x](https://laravel.com/docs/8.x)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [SQLite](https://www.sqlite.org/)
+- 
 
 ## Installation
 
 Development environment requirements :
-- [Php 7.2+](https://www.virtualbox.org/)
-- Apache/nginx server
+- [Php 7.2+](https://www.php.net/)
+- Either [Apache](https://httpd.apache.org/)/[nginx](https://www.nginx.com/) server , [Laradock](https://laradock.io/) or [Docker](https://www.docker.com/) equivalent
 
 Setting up the environment on your local machine :
 ```bash
@@ -26,3 +29,6 @@ DB_DATABASE=C:\your\absolute-path\blog-of-life\database\database.sqlite
 ```
 
 After that you're all set! Happy Testing. 🤓 
+Default Login
+Email: hello@blogoflife.com
+Pass:  amazeblogs22
