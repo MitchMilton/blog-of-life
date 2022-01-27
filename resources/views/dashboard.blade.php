@@ -4,7 +4,9 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
+    <a href="{{ route('posts.create') }}">
+        New Post
+    </a>
     {{-- Prompt if no posts found --}}
     @if ($posts->count()==0)
         

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -26,6 +27,18 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
+    {
+        
+        return view('pages.posts_create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
         $this->validate($request, array(
             'title' => 'required|max:255|unique:posts',                       
@@ -59,17 +72,6 @@ class PostController extends Controller
         $post->save();
 
         return redirect('/dashboard')->with('success', $post->title.'  has been created!');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
