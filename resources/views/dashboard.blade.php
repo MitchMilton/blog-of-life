@@ -46,7 +46,7 @@
                                     {{$post->title}}
                                 </div>
                                 <div class="col-4">
-                                    <a href="{{ route('posts.create') }}" class="btn btn-dark bg-dark pull-right">
+                                    <a href="{{url('posts/'.$post->id.'/edit')}}" class="btn btn-dark bg-dark pull-right">
                                         Edit
                                     </a>
                                     <a href="{{ route('posts.create') }}" class="btn btn-dark bg-dark pull-right">

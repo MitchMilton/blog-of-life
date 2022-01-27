@@ -42,7 +42,7 @@ class PostController extends Controller
             'title' => 'required|max:255|unique:posts',                       
             'content' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,webp|max:1024|sometimes',            
-            ));
+        ));
 
                 
         //store in the database
@@ -90,7 +90,12 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        if(empty($post)){
+            return redirect('/dashboard')->with('error', "Post does'nt exist!");
+        }else{            
+            return view('pages.posts_create',compact('post'));
+        }
     }
 
     /**
