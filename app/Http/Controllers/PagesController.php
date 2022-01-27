@@ -14,4 +14,10 @@ class PagesController extends Controller
         $posts = Post::all();     
         return view('welcome', compact('posts'));
     }
+
+    public function blog($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        return view('pages.posts_view', compact('post'));
+    }
 }
