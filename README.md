@@ -9,17 +9,19 @@ This is a simple php blog built with the following
 ## Installation
 
 Development environment requirements :
-- [Php 7.2+](https://www.php.net/)
 - Either [Apache](https://httpd.apache.org/)/[nginx](https://www.nginx.com/) server , [Laradock](https://laradock.io/) or [Docker](https://www.docker.com/) equivalent
+- [Php 7.3+](https://www.php.net/)
+- [Composer](https://getcomposer.org/)
 
-Setting up the environment on your local machine :
+Setting up the environment on your local machine. 
+Run these commands:
 ```bash
-$ git clone git@github.com:MitchMilton/blog-of-life.git
-$ cd blog-of-life
-$ cp .env.example .env
-$ composer install
-$ php artisan migrate:fresh --seed
-$ php artisan storage:link
+git clone git@github.com:MitchMilton/blog-of-life.git
+cd blog-of-life
+cp .env.example .env
+composer install
+php artisan migrate:fresh --seed
+php artisan storage:link
 ```
 
 After running these commands go to the .env file and set the value of "DB_DATABASE" to the absolute path leading to the database.sqlite
