@@ -42,10 +42,17 @@
                                         <img  src="/images/placeholder.png" alt="{{$post->image}}" class="img-responsive"/>
                                     @endif
                                 </div>
-                                <div class="col-6">                                    
+                                <div class="col-7">                                    
                                     {{$post->title}}
                                 </div>
-                                <div class="col-2"></div>
+                                <div class="col-4">
+                                    <a href="{{ route('posts.create') }}" class="btn btn-dark bg-dark pull-right">
+                                        Edit
+                                    </a>
+                                    <a href="{{ route('posts.create') }}" class="btn btn-dark bg-dark pull-right">
+                                        Delete
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     @endforeach                    
