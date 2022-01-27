@@ -16,11 +16,10 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/dashboard', [PostController::class, 'index'])->name('dashboard');
     Route::resource('posts', PostController::class);
-
 });
 
 require __DIR__.'/auth.php';
