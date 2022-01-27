@@ -49,8 +49,7 @@ class PostController extends Controller
         $post = new Post;
         $post->title = $request->title;        
         $post->content = $request->content;
-        $post->slug = str_slug($category->name.' '.$post->title);
-        // $post->slug = $post->title;
+        $post->slug = str_slug($post->title);
         
         if($request->hasFile('image')){           
                 
