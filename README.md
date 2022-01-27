@@ -4,12 +4,13 @@ This is a simple php blog built with the following
 - [Laravel 8.x](https://laravel.com/docs/8.x)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [SQLite](https://www.sqlite.org/)
+- 
 
 ## Installation
 
 Development environment requirements :
 - [Php 7.2+](https://www.php.net/)
-- Either Apache/nginx server , Laradock or Docker equivalent
+- Either [Apache](https://httpd.apache.org/)/[nginx](https://www.nginx.com/) server , [Laradock](https://laradock.io/) or [Docker](https://www.docker.com/) equivalent
 
 Setting up the environment on your local machine :
 ```bash
