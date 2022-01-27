@@ -15,7 +15,6 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
         //get and list all posts
         $posts = Post::all();     
         return view('dashboard', compact('posts'));
@@ -27,8 +26,7 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        
+    {        
         return view('pages.posts_create');
     }
 
