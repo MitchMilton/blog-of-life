@@ -4,7 +4,6 @@ This is a simple php blog built with the following
 - [Laravel 8.x](https://laravel.com/docs/8.x)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [SQLite](https://www.sqlite.org/)
-- 
 
 ## Installation
 
