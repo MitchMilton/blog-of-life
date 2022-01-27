@@ -57,8 +57,8 @@
                                 <div class="ml-4 text-lg leading-7 font-semibold"><a href="{{ route('post.view', $post->slug) }}" class="underline text-gray-900 dark:text-white">{{$post->title}}</a></div>
                             </div>
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
+                            <div class="p-6">
+                                <div class="text-gray-600 dark:text-gray-400 text-sm text-justify">
                                     {{substr($post->content, 0, 200) }}{{ strlen($post->content) > 200 ? "..." : ""}}
                                 </div>
                             </div>
