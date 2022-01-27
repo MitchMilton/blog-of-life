@@ -24,3 +24,5 @@ After running these commands go to the .env file and set the value of "DB_DATABA
 ```bash
 DB_DATABASE=C:\your\absolute-path\blog-of-life\database\database.sqlite
 ```
+
+After that you're all set! Happy Testing. 🤓 
